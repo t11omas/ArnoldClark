@@ -1,0 +1,35 @@
+@model List<PaymentViewModel>
+
+<h2>Payment Schedule</h2>
+
+@if (!this.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="All"></div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Payment Date</th>
+            <th>Payment Amount</th>
+            <th>Total Outstanding</th>
+            <th>Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var payment in this.Model)
+        {
+            <tr>
+                <td>@payment.Date</td>
+                <td>@payment.Amount</td>
+                <td>@payment.OutstandingAmount</td>
+                <td>@payment.Comments</td>
+            </tr>
+        }
+   
+        </tbody>
+    </table>
+}
+
+

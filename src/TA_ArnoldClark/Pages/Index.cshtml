@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>Loan Calculator</h2>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form method="get" asp-page-handler="Partial" data-ajax="true" data-ajax-method="get" data-ajax-update="#panel">
+
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+                    <label asp-for="VehiclePrice"></label>
+                    <input asp-for="VehiclePrice" class="form-control" />
+                    <span asp-validation-for="VehiclePrice"></span>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Deposit"></label>
+                    <input asp-for="Deposit" class="form-control" />
+                    <span asp-validation-for="Deposit"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label asp-for="DeliveryDate"></label>
+                    <input asp-for="DeliveryDate" class="form-control" value="2019-05-01" />
+                    <span asp-validation-for="DeliveryDate"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Term</label>
+                    <select id="inputTerm" class="form-control" name="Term">
+                        <option selected value="12">1 Year</option>
+                        <option value="24">2 Years</option>
+                        <option value="36">3 Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary pull-right">Calculate</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<div id="panel"></div>
