@@ -1,13 +1,13 @@
 # ArnoldClark
 Technical Test for Arnold Clark
 
-Assumptions
-
+**Assumptions**
 No interest rate to keep the problem simple
+
 rounded to 2 decimal places
 
 
-Notes
+**Notes**
 
 Add a few sample tests of the loan calculator
 
